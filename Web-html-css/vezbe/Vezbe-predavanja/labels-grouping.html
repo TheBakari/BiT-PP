@@ -1,0 +1,103 @@
+<!--==========================================================================  
+  Labels/Grouping
+  ●	Creates a form used for catering reservations
+  ●	The form contains multiple elements split into groups
+  ●	Each element should have a label assigned to it
+
+    First group
+      ●Name of the group should be "Personal data"
+      ●The first field is for the name
+      ●The second one is for the email address
+      ●The third is for the phone number
+
+     Second group
+      ●	Name of the group should be "Location"
+      ●	It should contain fields for:
+        ○	City
+        ○	Street
+        ○	Street number
+
+      Third group
+      ●	Name of the group should be "Event info"
+      ●	The first element is dropdown containing the following options:
+        ○	birthday
+        ○	wedding (should be selected by default)
+        ○	company 
+      ●	The second element is for getting number of expected guests and it’s an input type element
+      ●	Placeholder is a number you choose 
+============================================================================-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Labels Grouping</h1>
+
+  <h4>Catering reservations</h4>
+
+  <form action="#" method="POST">
+    
+    <fieldset>
+      <legend>Personal data</legend>
+
+      <label for="name">
+        Name:<br>
+        <input type="text" name="name" id="name"><br>
+      </label>
+      <label for="email">
+        Email address:<br>
+        <input type="email" name="email" id="email"><br>
+      </label>
+      <label for="phone_number">
+        Phone number:<br>
+        <input type="text" name="phone_number" id="phone_number"><br>
+      </label>
+
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Location</legend>
+
+      <label for="city">
+        City:<br>
+        <input type="text" name="city" id="city"><br>
+      </label>
+      <label for="street">
+        Street:<br>
+        <input type="street" name="street" id="street"><br>
+      </label>
+      <label for="street_number">
+        Street number:<br>
+        <input type="number" name="street_number" id="street_number"><br>
+      </label>
+
+    </fieldset><br>
+
+    <fieldset>
+      <legend>Event info</legend>
+
+      <label for="select">
+        <select name="select" id="select" multiple="multiple" size="2">
+          <option value="wedding" selected="Wedding">Wedding</option>
+          <option value="birthday">Birthday</option>
+          <option value="company">Company</option>
+        </select><br><br>
+      </label>
+      <label for="guests">
+        Guests:<br>
+        <input type="number" name="guests" id="guests" placeholder="150"><br>
+      </label>
+
+    </fieldset><br>
+
+  </form>
+
+</body>
+
+</html>
