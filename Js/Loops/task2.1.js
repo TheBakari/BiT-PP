@@ -114,16 +114,10 @@ console.log(newArray);
 // Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 var array1 = [4, 5, 6, 2];
 var array2 = [3, 8, 11, 9];
-var newArray = [];
-
-for (i = 0; i < array1.length; i++) {
-  newArray[i] = array1[i];
-}
-
 for (i = 0; i < array2.length; i++) {
-  newArray[newArray.length] = array2[i];
+  array1[array1.length] = array2[i];
 }
-console.log(newArray);
+console.log(array1);
   
 // 9.Write a program that deletes a given element e from the array a.
 // Input: e = 2, a = [4, 6, 2, 8, 2, 2]
