@@ -22,7 +22,7 @@ console.log(result);
 // Input array: [-3, 11, 5, 3.4, -8]
 // Output array: [-3, 22, 10, 6.8, -8]
 var array=[-3, 11, 5, 3.4, -8];
-    for(i=1;i<array.length;i++)
+    for(var i=1;i<array.length;i++)
         if(array[i]>0){
         array[i]*=2;
          }
@@ -36,7 +36,7 @@ console.log(array);
 var c=[4, 2, 2, -1, 6];
 
 var min=c[0];
-
+var index=0
 for(var i=0;i<c.length;i++){
      if (c[i] < min)
     {
@@ -53,21 +53,22 @@ console.log(min+" Index of smallest number is: "+index);
 var array=[4, 2, 2, -1, 6];
 var min=array[0];
 
-for(i=0;i<array.length;i++){
+for(var i=0;i<array.length;i++){
      if (array[i] < min){
         index = i
         b = index -1;
+        
     }
 }
 console.log(array[b])
+
 
 // 5 Write a program that calculates the sum of positive elements in the array.
 // Input array: [3, 11, -5, -3, 2]
 // Output: 16
 var array=[3, 11, -5, -3, 2];
-sum=0;
-result='';
-    for(i=0;i<array.length;i++){
+var sum=0;
+    for(var i=0;i<array.length;i++){
          if(array[i]>0){
             sum+=array[i];
          }
@@ -82,7 +83,7 @@ console.log(sum);
 // Output: The array is symmetric.
 var p = 0;
 var array = [2, 4, -2, 7, -2, 4, 2];
-for(i = 0; i < array.length/2; i++){
+for(var i = 0; i < array.length/2; i++){
     if(array[i] != array[array.length-1-i]){
         p = 1;
     }
@@ -101,7 +102,7 @@ var array1 = [4, 5, 6, 2];
 var array2 = [3, 8, 11, 9];
 var newArray = [];
 
-for (i = 0; i < array1.length; i++) {
+for (var i = 0; i < array1.length; i++) {
 
   newArray[newArray.length] = array1[i];
   newArray[newArray.length] = array2[i];
@@ -114,7 +115,7 @@ console.log(newArray);
 // Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 var array1 = [4, 5, 6, 2];
 var array2 = [3, 8, 11, 9];
-for (i = 0; i < array2.length; i++) {
+for (var i = 0; i < array2.length; i++) {
   array1[array1.length] = array2[i];
 }
 console.log(array1);
@@ -148,7 +149,7 @@ if (p > a.length) {
   console.log("Error message!!");
 } else {
 
-  for (i = 0; i < a.length; i++) {
+  for (var i = 0; i < a.length; i++) {
     if (i === p) {
       newArray[newArray.length] = e;
       newArray[newArray.length] = a[i];
