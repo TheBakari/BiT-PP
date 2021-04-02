@@ -30,7 +30,7 @@ function three(digit){
 console.log(three(12131230))
 
 //4 Write a program that calculates an arithmetic mean of four numbers.
-var array=[1,2,3,4,5];
+var array=[1,2,3,4]
 var sum=0;
 function arit(array){
     for(var i=0;i<array.length;i++){
@@ -41,8 +41,13 @@ function arit(array){
  return sum
 }
 console.log(arit(array))
-
-
+//primer 2
+function avg(a,b,c,d){
+     var sum=a+b+c+d
+    var result= sum/4;
+    return result;
+}
+console.log(avg(1,2,3,4))
 
 // //5Write a program that draws a square of a given size. For example, if the size of square
 // is 5 the program should draw:
@@ -161,6 +166,19 @@ function string(str){
 }
 console.log(string(inputString))
 
+//primer 2
+function numOfAInString(string,lowLetter,capLetter){
+    var charCounter=0;
+    for(var i=0;i<string.length;i++){
+        currentChar=string[i]
+        if(currentChar==lowLetter|| currentChar===capLetter){
+            charCounter++;
+        }
+    }
+    return charCounter;
+}
+console.log(numOfAInString("blablaAA",'b',"A"))
+
 // //11.Write a program that concatenates a given string given number of times. For example, if
 // “abc” and 4 are given values, the program prints out abcabcabcabc.
 
@@ -173,3 +191,13 @@ function str(a,b){
     return result
 }
 console.log(str(string,4))
+
+//Primer 2
+function concat(string,repeNum){
+    var newString="";
+    for(var i=0;i<repeNum;i++){
+        newString=newString+string;
+    }
+    return newString;
+}
+console.log(concat('bla ',2))
