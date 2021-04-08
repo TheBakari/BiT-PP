@@ -75,21 +75,33 @@ console.log(reverse(12345))
 // [7, 9, 0, -2] -> -2
 // [7, 9, 0, -2], 2 -> [0, -2]  
 
-function last(a,n) {
+// function last(a,n) {
+//     var result=[];
+//     if(n===undefined) {
+//         result=a[a.length-1];
+//     }else {
+//         for(var i = 0; i<a.length;i++) {
+//             if(i>=n){
+//               result[result.length]=a[i]
+//         }
+//     }
+//  }
+//    return result;
+// }
+// console.log(last([7, 9, 0, -2], 2))
+
+function lastElOfArr(a,n) {
     var result=[];
     if(n===undefined) {
         result=a[a.length-1];
-    }else {
-        for(var i = 0; i<a.length;i++) {
-            if(i>=n){
-              result[result.length]=a[i]
+    } else { 
+        for(var i = a.length-n; i<a.length; i++) {
+                result[result.length]=a[i];
         }
     }
- }
-   return result;
-}
-console.log(last([7, 9, 0, -2], 2))
-
+    return result;
+} 
+console.log(lastElOfArr([7, 9, 0, -2, 9, 8, 5], 3));
 
 // 6.	Write a function to create a specified number of elements with pre-filled numeric value array.
 
@@ -97,7 +109,20 @@ console.log(last([7, 9, 0, -2], 2))
 // 2, "none" -> ["none", "none"]
 // 2 -> [null, null] 
 
-
+function arrOfSpecEl (n, x) {
+    var newArr = [];
+   
+    for(var i = 0; i< n; i ++) {
+        if(x === undefined) {
+            x = null;
+            newArr[newArr.length] = x;
+        } else {
+            newArr[newArr.length] = x;
+        }
+    }
+    return newArr;
+}
+console.log(arrOfSpecEl(8));
 
 // 7.	Write a function that says whether a number is perfect.
 
