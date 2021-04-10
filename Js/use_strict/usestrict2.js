@@ -3,7 +3,26 @@
 
 // "My random string", "JS " -> "JS My random string"
 // "My random string", "JS ", 10 -> "My random JS string"
-
+function randomStr (str1,str2, x) {
+    var currentStr = "";
+    var finStr = "";
+    if(x === undefined) {
+        finStr = str2 + " " + str1;
+    } else {
+            for(var i = 0; i<str1.length; i++) {
+                var currentCharacter = str1[i];
+                if(i === x) {
+                    currentCharacter = " " + str2 + " " + currentCharacter;
+                    currentStr += currentCharacter; 
+                } else {
+                    currentStr += currentCharacter; 
+                    finStr = currentStr;
+                }
+            }
+    }
+    return finStr;  
+}
+console.log(randomStr("My random string", "JS", 10));
 
 // 2.	Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.
 
@@ -158,6 +177,32 @@ console.log(perfect(495))
 // 'The quick brown fox', 'fox' -> "'fox' was found 1 times"
 // 'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"
 
+var findWord= function (string,wordToFind) {
+    var counter=0;
+    var currentWword="";
+    string=string+' ';
+
+    //extra word for form string 
+    for(var i=0;i<string.length; i++){
+        var currentChar=string[i];
+
+        if(currentChar=== ' '){
+           //compare word by word from string with word we are looking for 
+            if(currentWword===wordToFind){
+                    // if we find same words increment counter
+                    counter++;
+            }
+            currentWword="";
+        }else{
+            currentWword+=currentChar;
+        }
+    }
+    // return something from  function
+    return counter;
+}
+
+
+console.log(findWord('The quick fox brown fox','fox'))
 
 
 // //9.	Write a function to hide email address.

@@ -47,7 +47,7 @@ for(var i=0;i<c.length;i++){
    
 console.log(min+" Index of smallest number is: "+index);
 
-// 4 Write a program that finds the first element larger than minimum and prints out its value. NIJE URADJEN
+// 4 Write a program that finds the first element larger than minimum and prints out its value. 
 // Input array: [4, 2, 2, -1, 6] 
 // Output: 2
 var array=[4, 2, 2, -1, 6];
