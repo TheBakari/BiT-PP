@@ -228,6 +228,27 @@ function hideMail(email){
 }
 console.log(hideMail("myemailaddress@bgit.rs"))
 
+//primer 2
+function hideMail(mail) {
+    var firstThree='';
+    var restOfMail='';
+    var indexOfAt;
+    for(var i=0;i<mail.length;i++){
+        if(i<3 ){
+            firstThree+=mail[i];
+        }
+        if(mail[i]==="@"){
+            indexOfAt=i;
+        }
+
+        if(indexOfAt){
+            restOfMail+=mail[i];
+        }
+    }
+    return firstThree+"..."+restOfMail;
+}
+console.log(hideMail("myemailaddress@bgit.rs"))
+
 
 // 10.	Write a program to find the most frequent item of an array.
 
@@ -252,3 +273,24 @@ function freq(a){
     return karakter+" "+numApp
 }
 console.log(freq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]))
+
+//primer2
+function mostFreq(arr) {
+    var maxCount=0;
+    var el;
+    for(var i=0;i<arr.length;i++){
+        var next=arr[i];
+        var nextCount=1;
+        for(var j=i+1;j<arr.length;j++){
+            if(arr[j] === next){
+                nextCount++
+            }
+        }
+        if(nextCount>maxCount){
+            maxCount=nextCount
+            el=next;
+        }
+    }
+    return el;
+}
+console.log(mostFreq([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]));

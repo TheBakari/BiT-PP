@@ -6,9 +6,9 @@ var strin=14;
 function stringInput(){
      var result=""
     if(typeof strin==='string'){
-        result='Ovo je string';
+       var result='Ovo je string';
     }else if(typeof strin==="number"){
-        result="ovo je broj";
+      var  result="ovo je broj";
     }
     else{
         result=false;
