@@ -58,20 +58,8 @@ function div (a){
 console.log (div([ 3, 500, -10, 149, 53, 414, 1, 19 ]))
 
 
-// Initialize two arrays. The first one should contain student names, the second one the
-// number of points for each student. Display students&#39; names with their corresponding
-// grade. Use the following ranges:
-// 51-60 -&gt; 6,
-// 61-70 -&gt; 7,
-// 71-80 -&gt; 8,
-// 81-90 -&gt; 9,
-// 91-100 -&gt; 10.
-// Input:
-// [ &quot;Micahel&quot;, &quot;Anne&quot;, &quot;Frank&quot;, &quot;Joe&quot;, &quot;John&quot;, &quot;David&quot;, &quot;Mark&quot;, &quot;Bill&quot; ], [ 50, 39, 63, 72, 99,
-// 51, 83, 59 ]
-// Output:
-// Bill acquired 59 points and earned 6. Micahel acquired 50 points and failed to complete
-// the exam.
+
+
 3. // Initialize two arrays. The first one should contain student names, the second one the number of points for each student. Display students' names with their corresponding grade. Use the following ranges:
 // 51-60 -> 6,
 // 61-70 -> 7,
@@ -111,16 +99,58 @@ console.log (exam([ "Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", 
 
 
 
-// (skip :))Sort a previously defined array. Place its sorted values into a new array whose
+//4. (skip :))Sort a previously defined array. Place its sorted values into a new array whose
 // values are equivalent to the first array&#39;s values multiplied by 2.
 // Input: [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 // Output: [ 2, 10, 12, 16, 22, 24, 26, 30 ]
 
+var array = [13, 11, 15, 5, 6, 1, 8, 12];
 
+function switchPlaces(array) {
+  
+  for (var i = 1; i < array.length; i++) {
+    for (var j = 0; j < i; j++) {
+      if (array[i] < array[j]) {
+        var x = array[i];
+        array[i] = array[j];
+        array[j] = x;
+      }
+    }
+  }
+
+  for(var i = 0; i < array.length; i++) {
+    array[i] = array[i] * 2;
+  }
+
+
+  return array;
+}
+
+var func = switchPlaces(array);
+console.log(func);
 // 5.	(skip :))Sort a previously defined array in a descending order and display it in the console.
 // Input:  [ 13, 11, 15, 5, 6, 1, 8, 12 ]
 // Output: [ 15, 13, 12, 11, 8, 6, 5, 1 ]
+var array = [ 13, 11, 15, 5, 6, 1, 8, 12 ];
 
+function descArray(array) {
+  
+  for (var i = 1; i < array.length; i++) {
+    for (var j = 0; j < i; j++) {
+      if (array[i] > array[j]) {
+        var x = array[i];
+        array[i] = array[j];
+        array[j] = x;
+      }
+    }
+  }
+
+
+  return array;
+}
+
+var func = descArray(array);
+console.log(func);
 // 6.	Write a program that uses a loop to add all the even numbers from 1 to 1000 and subtracts all the odd numbers 1 to 500 from the calculated sum. The result should then be multiplied by 12.5 and displayed in console.
 // Output: 2350000
 function subsum (a){
@@ -225,7 +255,50 @@ console.log(prime(num));
 // 11.	Check if a given string is a palindrome (spaces are ignored).
 // Input:  eye  | Geek  | a nut for a jar of tuna
 // Output: true | false | true
+var string = "a nut for a jar of tuna";
 
+function reversedString(string) {
+  var stringAsc = "";
+  var stringDesc = "";
+  for (var i = string.length - 1, j = 0; i >= 0, j < string.length; i--, j++) {
+    if (string[i] !== " ") {
+      stringDesc += string[i];
+    }
+    if (string[j] !== " ") {
+      stringAsc += string[j];
+    }
+  }
+
+  if (stringAsc == stringDesc) {
+    return true;
+  } else {
+    return false;
+  }
+ 
+}
+
+var func = reversedString(string);
+console.log(func);
 // 12.	Write a program that calculates the greatest common divisor of two integers. Note: The greatest common divisor of two non-zero integers is the greatest positive number that divides both numbers with no remainder.
 // Input:  192 42 | 81 9
 // Output: 6      | 9
+
+var a = 192;
+var b = 42;
+
+function commonDivisor(a, b) {
+  var divisor;
+  while (a !== b) {
+    if (a > b) {
+      a = a - b;
+    } else {
+      b = b - a;
+    }
+  }
+  divisor = a;
+
+  return divisor;
+}
+
+var func = commonDivisor(a, b);
+console.log(func);
