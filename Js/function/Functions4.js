@@ -92,7 +92,7 @@ console.log (sumP([3, 11, -5, -3, 2]))
 // be read the same way both from the left and the right hand side.
 // Input array: [2, 4, -2, 7, -2, 4, 2]
 // Output: The array is symmetric.
-'use strickt'
+'use stict'
 var sim = function (a){
     var result='';
     for (var i=0, j=a.length-1; i<a.length, j>0; i++, j--){

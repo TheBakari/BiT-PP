@@ -140,11 +140,11 @@ function string(str){
         if(current===' '){
             arrayOf[arrayOf.length]=null;
         }else{
-            arrayof[arrayOf.length]=current
+            arrayOf[arrayOf.length]=current
         }
     }
 
-    return arrayof
+    return arrayOf
 }
 console.log(string("My random string"))
 

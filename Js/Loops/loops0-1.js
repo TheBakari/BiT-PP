@@ -110,31 +110,32 @@ for (i = 0; i <= 20; i++) {
 // &lt; 90% B
 // &lt; 100% A
 
-var students = [['David', 80], ['Vinoth', 77], ['Divya', 88], ['Ishitha', 95], ['Thomas', 68]];
-
-var Avgm=0;
-for (var i=0;i<students.length;i++)
-{
-    Avgma += students[i][1];
-    var avg = (Avgm/students.length);
-}
-console.log("Avg grade"+ Avgm/students.length)
-    if(avg<60){
-        console.log("Grade: F")
-    }
-    else if(avg<70){
-        console.log("Grade: D")
-    }
-    else if(avg<80){
-        console.log("Grade is C")
-    }
-    else if(avg<90){
-        console.log("Grade is B")
-    }
-    else if (avg < 100) {
-        console.log("Grade : A");
-    }
-
+var students = [
+    ['David', 80],
+    ['Marko', 50],
+    ['Dany', 88],
+    ['John', 95],
+    ['Thomas', 68]
+  ];
+  
+  var sum = 0;
+  for (i = 0; i < students.length; i++) {
+    sum += students[i][1];
+    //sum = sum + students[i][1];
+    var average = (sum / students.length);
+  }
+  
+  if (average >= 90 && average < 100) {
+    console.log("Average grade is : " + average + " and final mark is A");
+  } else if (average >= 80 && average < 90) {
+    console.log("Average grade is : " + average + " and final mark is B");
+  } else if (average >= 70 && average < 80) {
+    console.log("Average grade is : " + average + " and final mark is C");
+  } else if (average >= 60 && average < 70) {
+    console.log("Average grade is : " + average + " and final mark is D");
+  } else {
+    console.log("Average grade is : " + average + " and final mark is F");
+  }
 
 
 /**8. Write a program that uses console.log to print all the numbers from 1 to 100, with two

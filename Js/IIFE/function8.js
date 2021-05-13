@@ -76,7 +76,15 @@ number.
 Input: 034
 Output: 28
 ===================================================================*/
+var num = 034;
 
+var octal = function (num) {
+  var octalNumber = parseInt(num);
+
+  return octalNumber;
+}
+
+console.log(octal(num));
 /*==================================================================
 6.Write a function that checks if a given string is valid password. The password is valid if it
 is at least 6 characters long and contains at least one digit. The function should receive
@@ -86,17 +94,48 @@ Input: JSGuru
 Output: Your password is invalid
 ===================================================================*/
 
-// var a="JSGuru123";
+var string = "JSGuru123";
 
-// function password(a){
-//    var result=""
-//     for(var i=0; i<a.length;i++){
-//         if(a.length>=6){
-//             result="Password is ok";
-//     }
-//     return result
-// }
-// console.log(password(a))
+var password = function (string) {
+  var result;
+  var counter = 0;
+  if (string.length > 6) {
+    for (var i = 0; i < string.length; i++) {
+      var resultNumbers = parseInt(string[i]);
+      if (isFinite(resultNumbers)) {
+        counter++;
+      }
+    }
+
+    if (counter === 0) {
+      result = "Password must have at least one number. Your password is invalid!";
+    } else {
+      result = "Your password is cool!";
+    }
+  } else {
+    result = "Password must be at least 6 charasters long.";
+  }
+
+  return result;
+}
+
+console.log(password(string));
 
 
+/*==================================================================
+7.	Write a function that filters elements of the given array so that they satisfy a condition given by the callback function.
+Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
+Output: [11, 9, 3] 
+===================================================================*/
+
+
+(function(array){
+    newArray=[]
+    for(var i=0;i<array.length;i++){
+        if(array[i]% 2!==0){
+            newArray[newArray.length]=array[i];
+        }
+    }
+    console.log(newArray) 
+})([2, 8, 11, 4, 9, 3])
 
