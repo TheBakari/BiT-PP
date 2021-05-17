@@ -39,3 +39,6 @@ var coffee ={
 //console.log(coffee);// Pozivanje celog objekta
 
 console.log('I like to drink '+ coffee.getCoffeeStrenght() +",  "+coffee.name+ ' coffee '+ coffee.getMilkInfo()+'.')
+
+// methoda nekog objekta
+//
