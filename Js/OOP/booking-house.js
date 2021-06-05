@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 (function(){
     var CONTINENT={
         ASIA:"AS",
@@ -78,7 +78,7 @@
             this.players[this.players.length]=player
         }
         this.printFormatedInfo=function () {
-            return this.address.newAddress()+ ", "+ "sum of all bets: " + this.getSumOfBets()
+            return this.address.newAddress()+ ", "+ "sum of all bets: " + this.getSumOfBets()+this.getListOfPlayers()
         }
         this.getSumOfBets= function () {
             var sum=0;
@@ -88,17 +88,60 @@
             }
             return sum;
         }
-        
+        this.getListOfPlayers=function(){
+            var playerList="";
+            for(var i=0;i<this.players.length; i++){
+                var player=this.players[i]
+                playerList+='\n\t'+ player.getBetInfo()
+            }
+            return playerList;
+
+        }
+} 
+        function BettingHouse (competition){
+            this.competition=competition;
+            this.listOfBettingPlaces=[]
+            this.getTotalNumberOfPlayers=function(){
+                var total=0;
+                //console.log(this.listOfBettingPlaces)
+                 this.listOfBettingPlaces.forEach(function(place){
+                     total+=place.players.length;
+                 });
+                     return total;
+                };
+            this.addBettingPlace=function(bettingPlace){
+                this.listOfBettingPlaces[this.listOfBettingPlaces.length] = bettingPlace
+            };
+                this.getNumberOfBetsByCountry = function (countryNameToCheck){
+                 var total=0;
+                 for (var i=0;i<this.listOfBettingPlaces.length;i++){
+                    var place=this.listOfBettingPlaces[i];
+
+                    for(var j=0;j<place.players.length;j++){
+                        var player=place.players[j]
+                        var currentCountryName=player.country.name;
+                        if(currentCountryName === countryNameToCheck){
+                            total++;
+                        }
+                    }
+                } 
+                return total;
+             };
+             //pitati ivana 
+            
+       
+       
     }
    
-    var serbia = new Country('Serbia',5,CONTINENT.EUROPE);
+    var serbia = new Country('Serbia',5,CONTINENT.EUROPE); 
+    var brasil = new Country('Brasil',5,CONTINENT.SOUTH_AMERIKA);
 
     var address = new Address ('Nemanjina 4', 11000,'Beograd', serbia);
     
     var nikola= new Person("Nikola","Draganic",{day: 25,month: 6,year: 1993});
     
     var player1=new Player(nikola,100,serbia,address);
-    var player2=new Player(nikola,100,serbia,address);
+    var player2=new Player(nikola,400,serbia,address);
     var player3=new Player(nikola,100,serbia,address);
 
     var bettingPlace=new BettingPlace(address);
@@ -106,7 +149,16 @@
     bettingPlace.addPlayer(player2);
     bettingPlace.addPlayer(player3);
 
-    console.log(bettingPlace.printFormatedInfo());
+
+    var bettingHouse= new BettingHouse('Football World Cup Winner')
+  
+    
+
+    bettingHouse.addBettingPlace(bettingPlace)
+
+    bettingHouse.getTotalNumberOfPlayers();
+    console.log(bettingHouse.getTotalNumberOfPlayers())
+    //console.log(bettingPlace.printFormatedInfo());
 
     
 })();
